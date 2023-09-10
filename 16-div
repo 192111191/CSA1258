@@ -1,0 +1,19 @@
+lhld 2000
+xchg
+lhld 2001
+mov a,d
+mov b,h
+mvi c,00h
+loop: inr c
+sub b
+jnz loop
+mov h,c
+mov a,e
+mov b,l
+mvu c,00h
+l1: inr c
+sub b
+jnz l1
+mov l,c
+sta 2002
+hlt
